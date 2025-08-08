@@ -31,7 +31,6 @@ EOF
     sleep 2
 done
 
-# Privoxy Setup
 cat <<EOF > "$HOME/.privoxy/config"
 listen-address 127.0.0.1:8118
 EOF
@@ -42,27 +41,23 @@ privoxy "$HOME/.privoxy/config" > /dev/null 2>&1 &
 
 COUNT=0
 while true; do
-    # Gửi lệnh đổi IP Tor
     for ctrl_port in "${CONTROL_PORTS[@]}"; do
         echo -e "AUTHENTICATE \"\"\r\nSIGNAL NEWNYM\r\nQUIT" | nc 127.0.0.1 $ctrl_port > /dev/null 2>&1
     done
 
-    # Đợi Tor cấp IP mới
     sleep 3
 
-    # Lấy IP + thông tin
     IP_INFO=$(curl --proxy http://127.0.0.1:8118 -s https://ipinfo.io/json)
     NEW_IP=$(echo "$IP_INFO" | grep '"ip":' | cut -d'"' -f4)
     COUNTRY=$(echo "$IP_INFO" | grep '"country":' | cut -d'"' -f4)
     CITY=$(echo "$IP_INFO" | grep '"city":' | cut -d'"' -f4)
 
-    # Nếu không lấy được IP thì thử lại
     if [[ -z "$NEW_IP" ]]; then
         continue
     fi
 
     COUNT=$((COUNT + 1))
-    TIME_NOW=$(date +"%H:%M:%S:")
+    TIME_NOW=$(date +"%H:%M:%S")
 
     echo -e "\e[1;36m[Thời gian]: ${TIME_NOW}\e[0m"
     echo -e "\e[1;36m[IP mới]: $NEW_IP\e[0m"
