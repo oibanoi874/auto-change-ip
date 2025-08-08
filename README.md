@@ -22,12 +22,19 @@ Công cụ này hữu ích khi cần bảo mật, ẩn danh hoặc vượt giớ
 ## 🛠 Lệnh để cài
 
 -termux-setup-storage
+
 -pkg update -y && pkg upgrade -y && apt update -y && apt upgrade -y
+
 -pkg install git python curl wget unzip -y
+
 -pkg install tur-repo -y
+
 -pkg install tor privoxy netcat-openbsd -y
+
 -git clone https://github.com/oibanoi874/auto-change-ip.git
+
 -cd auto-change-ip
+
 -bash ipchange.sh
 
 ---
@@ -35,12 +42,16 @@ Công cụ này hữu ích khi cần bảo mật, ẩn danh hoặc vượt giớ
 ## ⚙ Cấu hình mặc định
 
 -5 Tor nodes chạy song song.
+
  -Proxy: 127.0.0.1:8118
+ 
  -Delay đổi IP: 30 giây
+ 
  -API IP info: https://ipinfo.io/json
 
  ---
 
  ## ⚠ Lưu ý
 -Tor cần vài giây để cấp IP mới → nếu lỗi, script sẽ tự thử lại.
+
 -Một số dịch vụ web vẫn có thể phát hiện Tor.
