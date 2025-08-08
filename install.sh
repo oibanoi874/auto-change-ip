@@ -9,7 +9,7 @@ echo -e "⏰ ${YELLOW}Bắt đầu cài đặt các gói cơ bản: curl, wget, 
 pkg install curl wget unzip -y > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
-    echo -e "⏰ ${YELLOW}Cài đặt curl, wget, unzip thành công!${NC}"
+    echo -e "😀 ${GREEN}Cài đặt curl, wget, unzip thành công!${NC}"
 else
     echo -e "😭 ${RED}Lỗi: Không thể cài đặt các gói cơ bản.${NC}"
     exit 1
@@ -19,7 +19,7 @@ echo -e "⏰ ${YELLOW}Bắt đầu thêm kho lưu trữ Tur-Repo...${NC}"
 pkg install tur-repo -y > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
-    echo -e "⏰ ${YELLOW}Thêm Tur-Repo thành công!${NC}"
+    echo -e "😀 ${GREEN}Thêm Tur-Repo thành công!${NC}"
 else
     echo -e "😭 ${RED}Lỗi: Không thể thêm Tur-Repo.${NC}"
     exit 1
@@ -29,7 +29,7 @@ echo -e "⏰ ${YELLOW}Bắt đầu cài đặt Tor, Privoxy và Netcat...${NC}"
 pkg install tor privoxy netcat-openbsd -y > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
-    echo -e "⏰ ${YELLOW}Cài đặt Tor, Privoxy, Netcat thành công!${NC}"
+    echo -e "😀 ${GREEN}Cài đặt Tor, Privoxy, Netcat thành công!${NC}"
 else
     echo -e "😭 ${RED}Lỗi: Không thể cài đặt Tor, Privoxy, Netcat.${NC}"
     exit 1
@@ -37,4 +37,4 @@ fi
 
 echo "---"
 echo -e "😀 ${GREEN}Tất cả các gói đã được cài đặt hoàn tất!${NC}"
-echo -e "😀 ${GREEN}mDùng lệnh bash ipchange.sh để bắt đầu dùng tool.${NC}"
+echo -e "😀 ${GREEN}Dùng lệnh bash ipchange.sh để bắt đầu dùng tool.${NC}"
