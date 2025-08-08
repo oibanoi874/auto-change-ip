@@ -22,7 +22,8 @@ Công cụ này hữu ích khi cần bảo mật, ẩn danh hoặc vượt giớ
 ## 🛠 Lệnh để cài
 
 - termux-setup-storage
-- pkg update -y && pkg upgrade -y && apt update -y && apt upgrade -y
+- pkg update -y && pkg upgrade -y
+- apt update -y && apt upgrade -y
 - pkg install git -y
 - git clone https://github.com/oibanoi874/auto-change-ip.git
 - cd auto-change-ip
